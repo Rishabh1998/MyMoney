@@ -55,10 +55,10 @@ def rebalance(equity, debt, gold)
 end
 
 def check_if_rebalnce_is_possible
-    if !$investments[11].nil?
-        rebalance($investments[11][:equity], $investments[11][:debt], $investments[11][:gold])
-    elsif !$investments[5].nil?
-        rebalance($investments[5][:equity], $investments[5][:debt], $investments[5][:gold])
+    if !$investments[$month[:december]].nil?
+        rebalance($investments[$month[:december]][:equity], $investments[$month[:december]][:debt], $investments[$month[:december]][:gold])
+    elsif !$investments[$month[:june]].nil?
+        rebalance($investments[$month[:june]][:equity], $investments[$month[:june]][:debt], $investments[$month[:june]][:gold])
     else
         puts "CANNOT_REBALANCE"
     end
