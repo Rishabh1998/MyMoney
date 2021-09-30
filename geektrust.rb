@@ -36,9 +36,9 @@ def change(equity_perc, debt_perc, gold_perc, month_number)
         $investments[month_number][:debt] = $investments[month_number - 1][:debt] + $sip[:debt]
         $investments[month_number][:gold] = $investments[month_number - 1][:gold] + $sip[:gold]
     end
-    $investments[month_number][:equity] += ($investments[month_number][:equity]*equity_perc/100.0)
-    $investments[month_number][:debt] += ($investments[month_number][:debt]*debt_perc/100.0)
-    $investments[month_number][:gold] += ($investments[month_number][:gold]*gold_perc/100.0)
+    $investments[month_number][:equity] += ($investments[month_number][:equity]*equity_perc/100.0).floor()
+    $investments[month_number][:debt] += ($investments[month_number][:debt]*debt_perc/100.0).floor()
+    $investments[month_number][:gold] += ($investments[month_number][:gold]*gold_perc/100.0).floor()
 end
 
 def balance(month_number)
